@@ -55,10 +55,10 @@ def request_blog_list(page=1):
     
     print(url)
     reply = requests.get(url,headers=headers)
-    print(reply.text)
-    f = open('test.txt', 'w')
-    f.write(reply.text)
-    f.close()
+    #print(reply.text)
+    #f = open('test.txt', 'w')
+    #f.write(reply.text)
+    #f.close()
     parse = BeautifulSoup(reply.content, "html.parser")
     spans = parse.find_all('div', attrs={'class':'article-item-box csdn-tracking-statistics'})
     blogs = []
